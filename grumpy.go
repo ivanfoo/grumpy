@@ -34,6 +34,7 @@ func sayNiceOneFrom(list []string) string {
 }
 
 func main() {
+	gin.SetMode(gin.ReleaseMode)
 	flag.Parse()
 
 	router := gin.New()
@@ -45,7 +46,7 @@ func main() {
 
 	router.GET("/hi/:name", func(c *gin.Context) {
 		name := c.Param("name")
-		c.String(http.StatusOK, "You are a fucking %s, %s", sayNiceOneFrom(niceWords), name)
+		c.String(http.StatusOK, "You are a fucking %s, %s\n", sayNiceOneFrom(niceWords), name)
 	})
 
 	router.Run(*listenAddr)
