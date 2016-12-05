@@ -6,7 +6,7 @@ dependencies:
 
 artifacts:
 	@mkdir artifacts \
-	&& go build -o artifacts/dummy \
+	&& go build -o artifacts/$(PROJECT) \
 
 clean:
 	@rm -rf artifacts/
