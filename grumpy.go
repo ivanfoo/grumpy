@@ -49,5 +49,8 @@ func main() {
 		c.String(http.StatusOK, "You are a fucking %s, %s\n", sayNiceOneFrom(niceWords), name)
 	})
 
+	router.GET("/kiss", func(c *gin.Context) {
+		c.String(http.StatusOK, "YOU ARE SO FUCKING SEXY, JUST KISS ME")
+	})
 	router.Run(*listenAddr)
 }
